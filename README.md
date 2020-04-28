@@ -103,8 +103,7 @@ module.exports = {
     $ npm init -y
 
 3. 패키지 설치
-    $ npm i -D webpack webpack-cli webpack-dev-server react react-dom
-        @babel/core babel-loader @babel/preset-env @babel/preset-react
+    $ npm i -D webpack webpack-cli webpack-dev-server react react-dom @babel/core babel-loader @babel/preset-env @babel/preset-react
     $ npx webpack -v
 
 4. webpack 설정(webpack.config.js)
