@@ -10,12 +10,12 @@ export default class KanbanBoard extends React.Component {
             "in-progress": [],
             "done": []
         }
-        allCards.forEach(card => cards[ card.status ].push( card ));
+        allCards.forEach(card => cards[card.status].push(card));
         return (
             <div className='KanbanBoard'>
-                <CardList key='todo' cards={ cards['todo'] } title='To Do' />
-                <CardList key='in-progress' cards={ cards['in-progress'] } title='In Progress' />
-                <CardList key='done' cards={ cards['done'] } title='Done' />
+                <CardList key='todo' cards={cards['todo']} title='To Do' />
+                <CardList key='in-progress' cards={cards['in-progress']} title='In Progress' />
+                <CardList key='done' cards={cards['done']} title='Done' />
             </div>
         )
     }

@@ -1,5 +1,5 @@
 {
-  "name": "project-ex06",
+  "name": "project-ex13",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -7,6 +7,7 @@
     "build": "npx webpack",
     "start": "npx webpack-dev-server"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
