@@ -1,21 +1,33 @@
 import React from "react";
 import PropTypes from 'prop-types';
 
-export default class TaskList extends React.Component {
-  render() {
-    let taskComponents = [];
-    this.props.tasks.forEach(task => taskComponents.push(<li className='TaskList__Task'>
-        <input type='checkbox' defaultChecked={ task.done } />
-        { task.name }
-        <a href='#' className='TaskList__Task--remove' />
-    </li>));
+import styles from './TaskList.css';
 
+export default class TaskList extends React.Component {
+
+  onInputKeyPress(event){
+    if(event.key === 'Enter'){
+      this.props.taskCallbacks.add(this.props.cardId, event.target.value);
+      event.target.value = '';
+    }
+  }
+
+  render() {
     return (
         <div className='TaskList'>
             <ul>
-                { taskComponents }
+                { this.props.tasks.map(task => 
+                    <li key={ task.id } className={styles.Task}>
+                      <input type='checkbox' defaultChecked={ task.done } />
+                      { task.name }
+                      <a href='#' className={ styles['Task--remove'] } />
+                    </li>)}
             </ul>
-            <input type='text' className='TextList--add-task' placeholder='새 테스크' />
+            <input
+              type='text' 
+              className={ styles['Input--add-task '] }
+              placeholder='새 테스크'
+              onKeyPress={this.onInputKeyPress.bind(this)} />
          </div>
     )
   }
